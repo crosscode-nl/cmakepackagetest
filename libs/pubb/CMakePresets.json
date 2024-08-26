@@ -1,0 +1,76 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "default",
+      "description": "Default configuration",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "installDir": "${sourceDir}/../../install/${presetName}"
+    },
+    {
+      "name": "debug",
+      "description": "Debug configuration",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "inherits": "default"
+    },
+    {
+      "name": "release",
+      "description": "Release configuration",
+      "hidden": false,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "inherits": "default"
+    },
+    {
+      "name": "relwithdebinfo",
+      "description": "Release configuration with debug info",
+      "hidden": false,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "inherits": "default"
+    },
+    {
+      "name": "minsizerel",
+      "description": "Minimal size release configuration",
+      "hidden": false,
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      },
+      "inherits": "default"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "description": "Default build",
+      "configurePreset": "default"
+    },
+    {
+      "name": "debug",
+      "description": "Debug build",
+      "configurePreset": "debug"
+    },
+    {
+      "name": "release",
+      "description": "Release build",
+      "configurePreset": "release"
+    },
+    {
+      "name": "relwithdebinfo",
+      "description": "Release build with debug info",
+      "configurePreset": "relwithdebinfo"
+    },
+    {
+      "name": "minsizerel",
+      "description": "Minimal size release build",
+      "configurePreset": "minsizerel"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include ( "${CMAKE_CURRENT_LIST_DIR}/pubbTargets.cmake" )
+
+find_package(priva REQUIRED)
