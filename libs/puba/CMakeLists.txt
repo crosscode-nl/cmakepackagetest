@@ -11,7 +11,7 @@ add_library(puba STATIC puba.cpp)
 # Specify include directories
 target_include_directories(puba PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-        $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include>/libpuba
 )
 
 # Installation rules
@@ -21,7 +21,7 @@ install(TARGETS puba
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin)
 
-install(FILES puba.h DESTINATION include)
+install(FILES puba.h DESTINATION include/libpuba)
 
 install(EXPORT pubaTargets
         FILE pubaConfig.cmake

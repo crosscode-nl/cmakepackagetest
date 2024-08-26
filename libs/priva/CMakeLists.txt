@@ -11,7 +11,7 @@ add_library(priva STATIC priva.cpp)
 # Specify include directories
 target_include_directories(priva PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-        $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include>/libpriva
 )
 
 # Installation rules
@@ -21,7 +21,7 @@ install(TARGETS priva
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin)
 
-install(FILES priva.h DESTINATION include)
+install(FILES priva.h DESTINATION include/libpriva)
 
 install(EXPORT privaTargets
         FILE privaConfig.cmake

@@ -13,7 +13,7 @@ add_library(pubb STATIC pubb.cpp)
 # Specify include directories
 target_include_directories(pubb PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-        $<INSTALL_INTERFACE:include>
+        $<INSTALL_INTERFACE:include>/libpubb
 )
 
 target_link_libraries(pubb PUBLIC priva)
@@ -25,7 +25,7 @@ install(TARGETS pubb
         LIBRARY DESTINATION lib
         RUNTIME DESTINATION bin)
 
-install(FILES pubb.h DESTINATION include)
+install(FILES pubb.h DESTINATION include/libpubb)
 
 install(EXPORT pubbTargets
         FILE pubbTargets.cmake
